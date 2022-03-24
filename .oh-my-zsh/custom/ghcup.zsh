@@ -1,4 +1,4 @@
 # ghcup configuration
 
 export PATH=$HOME/.cabal/bin/:$PATH
-[ -f "/home/konrad/.ghcup/env" ] && source "/home/konrad/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env

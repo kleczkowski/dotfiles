@@ -7,6 +7,10 @@ Here is my dotfiles repository with essential config for Unix systems.
 ### Oh My Zsh
 Go [here](https://ohmyz.sh/) for installation guide.
 
+### direnv 
+Follow [these](https://direnv.net/docs/installation.html)
+installtion instructions.
+
 ### GHCUp
 Go [here](https://www.haskell.org/ghcup/) for installation guide.
 
