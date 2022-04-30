@@ -7,6 +7,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdcommenter'
@@ -14,9 +15,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'vim-scripts/happy.vim'
+Plug 'purescript-contrib/purescript-vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
