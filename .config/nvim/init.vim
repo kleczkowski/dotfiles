@@ -19,10 +19,24 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'vim-scripts/happy.vim'
+Plug 'vim-scripts/alex.vim'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'mattn/emmet-vim'
+Plug 'preservim/nerdtree'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
+
+""" }}}
+
+""" Appereance {{{
+
+set background=light
+colorscheme solarized
+let g:solarized_termcolors = 256
+let g:lightline = {
+      \ 'colorscheme': 'solarized'
+      \ }
 
 """ }}}
 
@@ -249,6 +263,15 @@ let g:ctrlp_user_command = [
   \ '.git', 'cd %s && git ls-files . -co --exclude-standard',
   \ 'find %s -type f'
   \ ]
+
+""" }}}
+
+""" NERDTree {{{
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 """ }}}
 
