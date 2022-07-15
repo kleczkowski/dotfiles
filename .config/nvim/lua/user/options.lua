@@ -27,8 +27,8 @@ local options = {
   cursorline = true,
   termguicolors = true,
   wrap = false,
-  timeoutlen = 250,
-  updatetime = 300,
+  timeoutlen = 200,
+  updatetime = 200,
   scrolloff = 8,
   sidescrolloff = 8,
 }
@@ -50,7 +50,7 @@ if os.getenv('WSL_DISTRO_NAME') ~= nil then
       ["+"] = "win32yank.exe -o --lf",
       ["*"] = "win32yank.exe -o --lf",
     },
-    cache_enabled = 0,
+    cache_enabled = 1,
   }
 end
 

@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 telescope.load_extension('media_files')
+telescope.load_extension('ui-select')
 
 local trouble_ok, trouble = pcall(require, "trouble.providers.telescope")
 if not trouble_ok then
@@ -14,7 +15,9 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
+    file_ignore_patterns = {
+      "dist-newstyle",
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -87,6 +90,19 @@ telescope.setup {
     },
   },
   pickers = {
+    find_file = {
+      find_command = {
+        "find",
+        "-type", "d", "\\(",
+        "-path", "./dist-newstyle",
+        "-path", "./.git",
+        "-path", "./.stack-work",
+        "-path", "./node-modules",
+        "\\)",
+        "-prune", "o", "-print"
+      }
+    }
+
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -96,12 +112,15 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    ["ui-select"] = {
+      codeactions = true
+    },
     media_files = {
         -- filetypes whitelist
         -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
         filetypes = {"png", "webp", "jpg", "jpeg"},
         find_cmd = "rg" -- find command (defaults to `fd`)
-      }
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

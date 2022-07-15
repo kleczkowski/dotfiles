@@ -49,7 +49,19 @@ return packer.startup(
     use "moll/vim-bbye"
     use "ahmedkhalf/project.nvim"
     use "antoinemadec/FixCursorHold.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
+
+    -- Zen mode --
+    use {
+      "Pocco81/TrueZen.nvim",
+      config = function ()
+        require "true-zen".setup {
+          integrations = {
+            gitsigns = true,
+            lualine = true
+          }
+        }
+      end
+    }
 
     -- Lualine --
     use {
@@ -59,6 +71,18 @@ return packer.startup(
 
     -- Color schemes --
     use "lunarvim/darkplus.nvim"
+    use "tanvirtin/monokai.nvim"
+
+    -- Easymotion --
+    use {
+      "phaazon/hop.nvim",
+      branch = "v2",
+      config = function ()
+        require "hop".setup {
+          keys = 'etovxqpdygfblzhckisuran', term_seq_bias = 0.5
+        }
+      end
+    }
 
     -- cmp plugins --
     use "hrsh7th/nvim-cmp"
@@ -76,10 +100,12 @@ return packer.startup(
     -- LSP support --
     use "williamboman/nvim-lsp-installer"
     use "neovim/nvim-lspconfig"
+    use "arkav/lualine-lsp-progress"
 
     -- Telescope --
     use "nvim-telescope/telescope.nvim"
     use 'nvim-telescope/telescope-media-files.nvim'
+    use "nvim-telescope/telescope-ui-select.nvim"
 
     -- Trouble --
     use {

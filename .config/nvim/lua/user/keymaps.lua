@@ -33,6 +33,27 @@ bind("n", "<S-h>", "<Cmd>bprevious<CR>")
 bind("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
 bind("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
 
+-- Searching
+bind("n", "<Leader>/", "<Cmd>HopPattern<CR>")
+
+bind('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+bind('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+bind('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>")
+bind('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>")
+
+bind("n", "<Leader>b", "<cmd>HopWordBC<CR>")
+bind("n", "<Leader>w", "<cmd>HopWordAC<CR>")
+bind("n", "<Leader>j", "<cmd>HopLineAC<CR>")
+bind("n", "<Leader>k", "<cmd>HopLineBC<CR>")
+bind("v", "<Leader>w", "<cmd>HopWordAC<CR>")
+bind("v", "<Leader>b", "<cmd>HopWordBC<CR>")
+bind("v", "<Leader>j", "<cmd>HopLineAC<CR>")
+bind("v", "<Leader>k", "<cmd>HopLineBC<CR>")
+bind("n", "s", "<cmd>HopChar2AC<CR>")
+bind("n", "S", "<cmd>HopChar2BC<CR>")
+bind("v", "s", "<cmd>HopChar2AC<CR>")
+bind("v", "S", "<cmd>HopChar2BC<CR>")
+
 -- Insert mode --
 -- Exit from insert presssing 'jk' quickly
 bind("i", "jk", "<ESC>")
@@ -55,7 +76,7 @@ bind("x", "<A-j>", ":move '>+1<CR>gv-gv")
 bind("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 -- Telescope --
-bind("n", "<Leader>ff", "<Cmd>Telescope git_files<CR>")
+bind("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>")
 bind("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 bind("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 bind("n", "<Leader>fw", "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
@@ -73,3 +94,8 @@ bind("n", "<Leader>xw", "<Cmd>TroubleToggle workspace_diagnostics<CR>")
 bind("n", "<Leader>xd", "<Cmd>TroubleToggle document_diagnostics<CR>")
 bind("n", "<Leader>xq", "<Cmd>TroubleToggle quickfix<CR>")
 bind("n", "<Leader>xl", "<Cmd>TroubleToggle loclist<CR>")
+
+-- Zen mode --
+bind("n", "<Leader>zz", "<Cmd>TZAtaraxis<CR>")
+bind("n", "<Leader>zx", "<Cmd>TZMinimalist<CR>")
+bind("n", "<Leader>zf", "<Cmd>TZFocus<CR>")

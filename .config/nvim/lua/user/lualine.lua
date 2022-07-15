@@ -62,6 +62,22 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local lsp_status = {
+  'lsp_progress',
+  separators = {
+		component = ' ',
+		progress = ' | ',
+		percentage = { pre = '', post = '%% ' },
+		title = { pre = '', post = ': ' },
+		lsp_client_name = { pre = '[', post = ']' },
+		spinner = { pre = '', post = '' },
+		message = { pre = '(', post = ')', commenced = 'In Progress', completed = 'Completed' },
+	},
+	display_components = { 'lsp_client_name', 'spinner', { 'title', 'precentage', 'message' } },
+	timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
+	spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
+}
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -74,7 +90,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = {},
+		lualine_c = { lsp_status },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
