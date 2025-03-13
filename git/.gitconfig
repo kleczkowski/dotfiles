@@ -1,0 +1,58 @@
+[core]
+	name = Konrad Kleczkowski
+	email = konrad@kleczkow.ski
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	editor = code --wait
+[init]
+	defaultBranch = main
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[init]
+        defaultBranch = main
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[core]
+        excludesfile = ~/.gitignore
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+
+[core]
+        fsmonitor = true
+        untrackedCache = true
+[merge]
+        conflictstyle = zdiff3 
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[pull]
+        rebase = true
+[user]
+	email = konrad@kleczkow.ski
+	name = Konrad Kleczkowski
