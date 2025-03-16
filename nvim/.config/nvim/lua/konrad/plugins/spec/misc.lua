@@ -1,4 +1,10 @@
 return {
     { "nvim-lua/plenary.nvim" },
-    { "christoomey/vim-tmux-navigator" },
+    {
+        "aserowy/tmux.nvim",
+        config = function()
+            local tmux = require("tmux")
+            tmux.setup()
+        end,
+    },
 }
