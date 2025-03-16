@@ -1,6 +1,6 @@
 [general]
 import = [
-    "C:\\Users\\konra\\AppData\\Roaming\\alacritty\\themes\\themes\\carbonfox.toml"
+    "C:\\Users\\konra\\AppData\\Roaming\\alacritty\\themes\\themes\\dayfox.toml"
 ]
 
 [env]
@@ -16,4 +16,4 @@ normal.family = "IosevkaTerm Nerd Font"
 size = 12
 
 [terminal]
-shell = { program = "wsl.exe", args = ["~", "-d", "Ubuntu"] }
+shell = { program = "wsl.exe", args = ["~"] }
