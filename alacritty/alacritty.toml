@@ -1,0 +1,19 @@
+[general]
+import = [
+    "C:\\Users\\konra\\AppData\\Roaming\\alacritty\\themes\\themes\\dayfox.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "Buttonless"
+padding.x = 10
+padding.y = 10
+
+[font]
+normal.family = "IosevkaTerm Nerd Font"
+size = 12
+
+[terminal]
+shell = { program = "wsl.exe", args = ["~"] }
