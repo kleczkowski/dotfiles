@@ -1,15 +1,15 @@
 return {
-    "EdenEast/nightfox.nvim",
-    config = function()
-        local nightfox = require("nightfox")
-        nightfox.setup({
-            options = {
-                styles = {
-                    comments = "italic",
-                    keywords = "bold",
-                },
-            },
-        })
-        vim.cmd("colorscheme dayfox")
-    end,
+    {
+        "cranberry-clockworks/coal.nvim",
+        config = function()
+            require("coal").setup({})
+        end,
+    },
+    -- {
+    --     "miikanissi/modus-themes.nvim",
+    --     priority = 1000,
+    --     config = function()
+    --         vim.cmd("colorscheme modus")
+    --     end,
+    -- },
 }
